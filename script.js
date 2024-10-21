@@ -16,7 +16,9 @@ fetch('assets/map.svg')
     point.addEventListener('mouseenter', (event) => {
       const pointId = event.target.id; // Get the point's ID
       const placeName = pointId.replace('label-', ''); // Extract the place name
-
+      const imagePath = `assets/${placeName}.svg`;
+      console.log(`Attempting to load image at: ${imagePath}`);
+      
       // Set the popup content with the image
       popup.innerHTML = `<img src="assets/${placeName}.svg" class="popup-image" alt="${placeName}">`; 
       popup.style.display = 'block'; // Show popup
